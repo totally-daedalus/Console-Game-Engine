@@ -30,14 +30,143 @@
 # define YELLOW COLOR_YELLOW
 # define WHITE COLOR_WHITE
 
-# define K_UP KEY_UP
-# define K_DOWN KEY_DOWN
-# define K_RIGHT KEY_RIGHT
-# define K_LEFT KEY_LEFT
+# define K_UP 259
+# define K_DOWN 258
+# define K_RIGHT 261
+# define K_LEFT 260
 
 # define K_ENTER 10
 
 # define K_ESCAPE 27
+
+# define K_F1 265
+# define K_F2 266
+# define K_F3 267
+# define K_F4 268
+# define K_F5 269
+# define K_F6 270
+# define K_F7 271
+# define K_F8 272
+# define K_F9 273
+# define K_F10 274
+# define K_F11 275
+# define K_F12 276
+
+# define K_BACKTICKS 96
+
+# define K_0 48
+# define K_1 49
+# define K_2 50
+# define K_3 51
+# define K_4 52
+# define K_5 53
+# define K_6 54
+# define K_7 55
+# define K_8 56
+# define K_9 57
+
+# define K_TILDE 126
+
+# define K_EXCLAMATION_MARK 33
+# define K_AT_SIGN 64
+# define K_NUMBER_SIGN 35
+# define K_DOLLAR_SIGN 36
+# define K_PERCENT_SIGN 37
+# define K_CIRCUMFLEX 94
+# define K_AMPERSAND 38
+# define K_ASTERISK 42
+# define K_STARTING_ROUND_BRACKET 40
+# define K_ENDING_ROUND_BRACKET 41
+
+# define K_UNDERLINE 95
+# define K_MINUS 45
+# define K_PLUS 43
+# define K_EQUAL 61
+
+# define K_BACKSPACE 263
+
+# define K_TAB 9
+
+# define K_LOWERCASE_A 97
+# define K_LOWERCASE_B 98
+# define K_LOWERCASE_C 99
+# define K_LOWERCASE_D 100
+# define K_LOWERCASE_E 101
+# define K_LOWERCASE_F 102
+# define K_LOWERCASE_G 103
+# define K_LOWERCASE_H 104
+# define K_LOWERCASE_I 105
+# define K_LOWERCASE_J 106
+# define K_LOWERCASE_K 107
+# define K_LOWERCASE_L 108
+# define K_LOWERCASE_M 109
+# define K_LOWERCASE_N 110
+# define K_LOWERCASE_O 111
+# define K_LOWERCASE_P 112
+# define K_LOWERCASE_Q 113
+# define K_LOWERCASE_R 114
+# define K_LOWERCASE_S 115
+# define K_LOWERCASE_T 116
+# define K_LOWERCASE_U 117
+# define K_LOWERCASE_V 118
+# define K_LOWERCASE_W 119
+# define K_LOWERCASE_X 120
+# define K_LOWERCASE_Y 121
+# define K_LOWERCASE_Z 122
+
+# define K_UPPERCASE_A 65
+# define K_UPPERCASE_B 66
+# define K_UPPERCASE_C 67
+# define K_UPPERCASE_D 68
+# define K_UPPERCASE_E 69
+# define K_UPPERCASE_F 70
+# define K_UPPERCASE_G 71
+# define K_UPPERCASE_H 72
+# define K_UPPERCASE_I 73
+# define K_UPPERCASE_J 74
+# define K_UPPERCASE_K 75
+# define K_UPPERCASE_L 76
+# define K_UPPERCASE_M 77
+# define K_UPPERCASE_N 78
+# define K_UPPERCASE_O 79
+# define K_UPPERCASE_P 80
+# define K_UPPERCASE_Q 81
+# define K_UPPERCASE_R 82
+# define K_UPPERCASE_S 83
+# define K_UPPERCASE_T 84
+# define K_UPPERCASE_U 85
+# define K_UPPERCASE_V 86
+# define K_UPPERCASE_W 87
+# define K_UPPERCASE_X 88
+# define K_UPPERCASE_Y 89
+# define K_UPPERCASE_Z 89
+
+# define K_STARTING_CURLY_BRACKET 123
+# define K_ENDING_CURLY_BRACKET 125
+# define K_STARTING_SQUARE_BRACKET 91
+# define K_ENDING_SQUARE_BRACKET 93
+
+# define K_BACKSLASH 92
+# define K_SLASH 47
+# define K_VERTICAL_BAR 124
+# define K_SEMICOLON 59
+# define K_COLON 58
+# define K_QUOTATION_MARK 34
+# define K_APOSTROPHE 39
+# define K_COMMA 44
+# define K_PERIOD 46
+# define K_LESS_THAN 60
+# define K_GREATER_THAN 62
+# define K_QUESTION_MARK 63
+
+# define K_SPACE 32
+
+# define K_INSERT 331
+# define K_DELETE 330
+# define K_HOME 262
+# define K_END 360
+# define K_PAGE_UP 339
+# define K_PAGE_DOWN 338
 
 class ConsoleGameEngine {
     private:
