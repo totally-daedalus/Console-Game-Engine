@@ -10,6 +10,7 @@
 
 # define NORMAL A_NORMAL
 # define STANDOUT A_STANDOUT
+# define UNDERLINE A_UNDERLINE
 # define REVERSE A_REVERSE
 # define BLINK A_BLINK
 # define DIM A_DIM
