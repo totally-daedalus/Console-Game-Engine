@@ -8,6 +8,7 @@
 # include <iostream>
 # include <cmath>
 # include <chrono>
+# include <fstream>
 
 # define NORMAL A_NORMAL
 # define STANDOUT A_STANDOUT
@@ -251,6 +252,131 @@ class ConsoleGameEngine {
         }
 
     public:
+
+        class TextFile {
+            private:
+
+                std::string path;
+                ConsoleGameEngine *engine;
+
+            public:
+
+                TextFile(ConsoleGameEngine *engine_) {
+                    engine = engine_;
+                }
+
+                std::vector<std::string> readlines() {
+                    std::ifstream file(path);
+                    std::vector<std::string> lines;
+                    std::string line;
+                    while(getline(file, line)) {
+                        lines.push_back(line);
+                    }
+                    file.close();
+                    return lines;
+                }
+
+                std::string readline(int index) {
+                    std::ifstream file(path);
+                    std::string line;
+                    int i = 0;
+                    while(getline(file, line)) {
+                        if(i == index) {
+                            file.close();
+                            return line;
+                        }
+
+                        i++;
+                    }
+                    engine -> close("Provided index (" + std::to_string(index) + ") is invalid");
+                }
+
+                int file_length() {
+                    std::ifstream file(path);
+                    std::string line;
+                    int size = 0;
+                    while(getline(file, line)) {
+                        size++;
+                    }
+                    file.close();
+                    return size;
+                }
+
+                void write(std::vector<std::string> lines) {
+                    std::ofstream file(path);
+                    for(int i = 0; i < lines.size(); i++) {
+                        if(i != 0) {
+                            file << std::endl;
+                        }
+
+                        file << lines[i];
+                    }
+                    file.close();
+                }
+
+                void append(std::vector<std::string> lines) {
+                    if(file_length() == 1) {
+                        write(lines);
+                    } else {
+                        std::ofstream file(path, std::ios_base::app);
+                        for(int i = 0; i < lines.size(); i++) {
+                            file << lines[i] << std::endl;
+                        }
+                        file.close();
+                    }
+                }
+            
+                void write(std::string line) {
+                    std::ofstream file(path);
+                    file << line;
+                    file.close();
+                }
+
+                void append(std::string line) {
+                    std::ofstream file(path, std::ios_base::app);
+                    file << line;
+                    file.close();
+                }
+
+                void replace(int index, std::string replace) {
+                    std::vector<std::string> lines = readlines();
+
+                    if(index > lines.size() || index < 0) {
+                        engine -> close("Provided index (" + std::to_string(index) + ") is invalid");
+                    }
+
+                    lines[index] = replace;
+
+                    write(lines);
+                }
+
+                void replace(std::string find, std::string replace) {
+                    std::vector<std::string> lines = readlines();
+
+                    for(int i = 0; i < lines.size(); i++) {
+                        if(lines[i] == find) {
+                            lines[i] = replace;
+                            write(lines);
+                            return;
+                        }
+                    }
+
+                    engine -> close("The string to find (" + find + ") cannot be found.");
+                }
+
+                std::string get_path() {
+                    return path;
+                }
+
+                void create(std::string path_) {
+                    path = path_;
+                    std::ofstream file(path, std::ios_base::app);
+                    if(!file.is_open()) {
+                        engine -> close("Provided path (" + path + ") is invalid.");
+                    }
+                    file.close();
+                }
+        };
 
         bool get_key(int keycode) {
             return event.get_key(keycode);
