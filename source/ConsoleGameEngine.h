@@ -7,6 +7,7 @@
 # include <unistd.h>
 # include <iostream>
 # include <cmath>
+# include <chrono>
 
 # define NORMAL A_NORMAL
 # define STANDOUT A_STANDOUT
@@ -69,8 +70,8 @@ class ConsoleGameEngine {
                 }
         };
 
-        long TARGET_FPS = 60;
-        double FPS_PER_SECOND = 1 / TARGET_FPS;
+        int TARGET_FPS = 60;
+        int FPS_PER_SECOND = 1 / 60;
 
         WINDOW *window;
 
@@ -209,6 +210,10 @@ class ConsoleGameEngine {
 
         int get_height() {
             return screenHeight;
+        }
+
+        long get_current_time() {
+            return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
         }
 
         void flush() {
