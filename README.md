@@ -6,24 +6,24 @@ Console Game Engine is made using ncurses, and only works on linux.
 ## Documentation
 ### Attributes
 **NORMAL**  
-&nbsp;&nbsp;Default color.  
+* Default color.  
 **STANDOUT**  
-&nbsp;&nbsp;Highlighting color  
+* Highlighting color  
 **UNDERLINE**  
-&nbsp;&nbsp;Underlining.  
+* Underlining.  
 **REVERSE**  
-&nbsp;&nbsp;Reverses text and background color.  
+* Reverses text and background color.  
 **BLINK**  
-&nbsp;&nbsp;Blinking.  
+* Blinking.  
 **DIM**  
-&nbsp;&nbsp;Half bright.  
+* Half bright.  
 **BOLD**  
-&nbsp;&nbsp;Extra bright or bold.  
+* Extra bright or bold.  
 **PROTECT**  
-&nbsp;&nbsp;Protected mode.  
+* Protected mode.  
 **INVIS**  
-&nbsp;&nbsp;Turns the text invisible.  
+* Turns the text invisible.  
 **ALTCHARSET**  
-&nbsp;&nbsp;Alternative character set.  
+* Alternative character set.  
 **CHARTEXT**  
-&nbsp;&nbsp;Bit-mask to extract a character.  
+* Bit-mask to extract a character.  
