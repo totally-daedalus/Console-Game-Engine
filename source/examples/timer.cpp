@@ -1,18 +1,18 @@
 # include "ConsoleGameEngine.h"
 
 class Game : public ConsoleGameEngine {
-    long timer;
+    Timer timer;
 
     int second = 0;
 
     virtual void start() {
-        timer = get_current_time() + 1000;
+        timer.start(1000);
     }
 
     virtual void update() {
-        if(get_current_time() > timer) {
+        if(timer.time_up()) {
             second++;
-            timer = get_current_time() + 1000;
+            timer.reset();
         }
 
         draw(0, 0, std::to_string(second) + ":" + std::to_string(get_current_time() % 1000));
