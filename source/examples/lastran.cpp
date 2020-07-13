@@ -5,7 +5,7 @@ class Game : public ConsoleGameEngine {
     
     virtual void start() {
         TextFile file(this);
-        file.create("/home/hello/Projects/C++/consolegameengine/source/examples/lastran.txt"); // you have to change the path according to where you placed the project
+        file.open("/home/hello/Projects/C++/consolegameengine/source/examples/lastran.txt"); // you have to change the path according to where you placed the project
         lastran = (get_current_time() - std::stol(file.readlines()[0])) / 1000;
         file.write(std::to_string(get_current_time()));
     }

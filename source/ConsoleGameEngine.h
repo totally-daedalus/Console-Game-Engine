@@ -368,7 +368,7 @@ class ConsoleGameEngine {
                     return path;
                 }
 
-                void create(std::string path_) {
+                void open(std::string path_) {
                     path = path_;
                     std::ofstream file(path, std::ios_base::app);
                     if(!file.is_open()) {
