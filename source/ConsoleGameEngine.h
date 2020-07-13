@@ -9,6 +9,7 @@
 # include <cmath>
 # include <chrono>
 # include <fstream>
+# include <experimental/filesystem>
 
 # define NORMAL A_NORMAL
 # define STANDOUT A_STANDOUT
@@ -411,6 +412,15 @@ class ConsoleGameEngine {
                     return false;
                 }
         };
+
+        std::string absolute_path() {
+            std::string path = std::experimental::filesystem::current_path();
+            return path + "/";
+        }
+
+        std::string absolute_path(std::string path) {
+            return absolute_path() + path;
+        }
 
         bool get_key(int keycode) {
             return event.get_key(keycode);
