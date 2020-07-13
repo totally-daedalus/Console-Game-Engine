@@ -381,16 +381,16 @@ class ConsoleGameEngine {
         class Timer {
             private:
 
-                long target_time;
-                long wait_time = 0;
+                unsigned long target_time;
+                unsigned long wait_time = 0;
 
-                long get_current_time() {
-                    return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
+                unsigned long get_current_time() {
+                    return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
                 }
 
             public:
 
-                void reset(long milli) {
+                void reset(unsigned long milli) {
                     wait_time = milli;
                     target_time = get_current_time() + wait_time;
                 }
@@ -399,7 +399,7 @@ class ConsoleGameEngine {
                     target_time = get_current_time() + wait_time;
                 }
 
-                void start(long milli) {
+                void start(unsigned long milli) {
                     reset(milli);
                 }
 
@@ -416,8 +416,8 @@ class ConsoleGameEngine {
             return event.get_key(keycode);
         }
 
-        long get_current_time() {
-            return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
+        unsigned long get_current_time() {
+            return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
         }
 
         template <class num>
