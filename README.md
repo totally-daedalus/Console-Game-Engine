@@ -7,10 +7,8 @@ Just drag the header file into your projects.
 # Examples
 You can find more examples in the source/examples folder.
 
-`
-
-
-#include "ConsoleGameEngine.h"
+```cpp
+# include "ConsoleGameEngine.h"
 
 class Game : public ConsoleGameEngine {
     int x = 1;
@@ -54,6 +52,4 @@ int main() {
     Game game;
     game.construct_console(20, 1);
 }
-
-
-`
+```
