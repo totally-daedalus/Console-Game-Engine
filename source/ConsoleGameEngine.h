@@ -416,9 +416,20 @@ class ConsoleGameEngine {
             return event.get_key(keycode);
         }
 
+        long get_current_time() {
+            return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
+        }
+
+        template <class num>
+        num get_random(num range1, num range2) {
+            return rand() % (range2 + 1 - range1) + range1;
+        }
+
         void construct_console(int width, int height) {
             screenWidth = width;
             screenHeight = height;
+
+            srand((unsigned)get_current_time());
             
             init_vector();
 
@@ -499,10 +510,6 @@ class ConsoleGameEngine {
 
         int get_height() {
             return screenHeight;
-        }
-
-        long get_current_time() {
-            return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
         }
 
         void flush() {
