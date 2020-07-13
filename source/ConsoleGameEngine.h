@@ -378,6 +378,40 @@ class ConsoleGameEngine {
                 }
         };
 
+        class Timer {
+            private:
+
+                long target_time;
+                long wait_time = 0;
+
+                long get_current_time() {
+                    return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
+                }
+
+            public:
+
+                void reset(long milli) {
+                    wait_time = milli;
+                    target_time = get_current_time() + wait_time;
+                }
+
+                void reset() {
+                    target_time = get_current_time() + wait_time;
+                }
+
+                void start(long milli) {
+                    reset(milli);
+                }
+
+                bool time_up() {
+                    if(get_current_time() >= target_time) {
+                        return true;
+                    }
+
+                    return false;
+                }
+        };
+
         bool get_key(int keycode) {
             return event.get_key(keycode);
         }
