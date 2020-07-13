@@ -8,6 +8,14 @@ Just drag the header file into your projects.
 You can find more examples in the source/examples folder.
 
 ```cpp
+/*
+Author: github.com/totally-daedalus/
+
+A simple console game engine demo.
+Use the arrows keys to move left and right.
+When you move into a portal it would teleport you.
+*/
+
 # include "ConsoleGameEngine.h" // include my header file
 
 class Game : public ConsoleGameEngine { // inherit the ConsoleGameEngine class
