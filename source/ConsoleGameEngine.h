@@ -383,7 +383,7 @@ class ConsoleGameEngine {
             private:
 
                 unsigned long target_time;
-                unsigned long wait_time = 0;
+                unsigned long waittime = 0;
 
                 unsigned long get_current_time() {
                     return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
@@ -392,16 +392,24 @@ class ConsoleGameEngine {
             public:
 
                 void reset(unsigned long milli) {
-                    wait_time = milli;
-                    target_time = get_current_time() + wait_time;
+                    waittime = milli;
+                    target_time = get_current_time() + waittime;
                 }
 
                 void reset() {
-                    target_time = get_current_time() + wait_time;
+                    target_time = get_current_time() + waittime;
                 }
 
                 void start(unsigned long milli) {
                     reset(milli);
+                }
+
+                unsigned long time_elapsed() {
+                    return get_current_time() - (target_time - waittime);
+                }
+
+                unsigned long wait_time() {
+                    return waittime;
                 }
 
                 bool time_up() {
